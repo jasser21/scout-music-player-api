@@ -1,7 +1,7 @@
 databases:
   - name: musicPlayer
-    databaseName: musicPlayer
-    user: musicPlayer
+    databaseName: my_database
+    user: my_user
 
 services:
   - type: web
