@@ -90,12 +90,15 @@ WSGI_APPLICATION = "musicPlayer.wsgi.application"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    "default": dj_database_url.config(
-        # Feel free to alter this value to suit your needs.
-        default="postgresql://postgres:postgres@localhost:5432/mysite",
-        conn_max_age=600,
-    )
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
+    }
 }
+
+DATABASES["default"] = dj_database_url.parse(
+    "postgres://backend_db_k107_user:cFRukaf5CHdQBrn0No7zFQmBgWbeLmdP@dpg-cleh24c15k1s73d6gcqg-a.oregon-postgres.render.com/backend_db_k107"
+)
 
 RENDER_EXTERNAL_HOSTNAME = os.environ.get("RENDER_EXTERNAL_HOSTNAME")
 if RENDER_EXTERNAL_HOSTNAME:
