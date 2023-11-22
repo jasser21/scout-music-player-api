@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # exit on error
 set -o errexit
-source ../bin/activate
+pip install -m requirements.txt
 python manage.py makemigrations
 python manage.py collectstatic --no-input
 python manage.py migrate
