@@ -96,7 +96,9 @@ DATABASES = {
     }
 }
 
-DATABASES["default"] = dj_database_url.parse(os.environ.get("DATABASE_URL"))  # type: ignore
+DATABASES["default"] = dj_database_url.parse(
+    "postgres://backend_db_k107_user:cFRukaf5CHdQBrn0No7zFQmBgWbeLmdP@dpg-cleh24c15k1s73d6gcqg-a.oregon-postgres.render.com/backend_db_k107"
+)
 
 RENDER_EXTERNAL_HOSTNAME = os.environ.get("RENDER_EXTERNAL_HOSTNAME")
 if RENDER_EXTERNAL_HOSTNAME:
