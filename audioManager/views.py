@@ -54,7 +54,7 @@ def dropbox_callback(request, format=None):
 
     update_or_create_user_tokens(request.session.session_key, access_token, state)
 
-    return redirect("https://master--astounding-cuchufli-f1afd5.netlify.app/")
+    return redirect("https://scout-music-player.netlify.app/")
 
 
 class IsAuthenticated(APIView):
