@@ -16,7 +16,7 @@ class AuthURL(APIView):
                 "GET",
                 "https://www.dropbox.com/oauth2/authorize",
                 params={
-                    "client_id": os.environ.get("cliend_key"),
+                    "client_id": os.environ.get("client_key"),
                     "redirect_uri": os.environ.get("redirect_uri"),
                     "response_type": "code",
                     "scope": "files.metadata.read files.content.read file_requests.read sharing.read",
@@ -54,7 +54,7 @@ def dropbox_callback(request, format=None):
 
     update_or_create_user_tokens(request.session.session_key, access_token, state)
 
-    return redirect("http://localhost:5173/playlist/")
+    return redirect("https://master--astounding-cuchufli-f1afd5.netlify.app/")
 
 
 class IsAuthenticated(APIView):
